@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Credit Card Application</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="hero">
+    <div class="hero__content">
+      <p class="eyebrow">New Customer</p>
+      <h1>Apply for your next credit card in minutes</h1>
+      <p class="lede">Tell us about yourself and we'll personalize your options instantly.</p>
+      <div class="metrics">
+        <div>
+          <p class="metric">$500 - $10,000</p>
+          <p class="label">Typical credit limits</p>
+        </div>
+        <div>
+          <p class="metric"><span class="highlight">24/7</span> support</p>
+          <p class="label">Dedicated onboarding</p>
+        </div>
+      </div>
+    </div>
+    <div class="hero__card">
+      <div class="card mock-card">
+        <div class="card__chip"></div>
+        <div class="card__number">**** **** **** 4242</div>
+        <div class="card__holder">New Member</div>
+      </div>
+      <p class="card__note">Secure, encrypted submission</p>
+    </div>
+  </header>
+
+  <main class="layout">
+    <section class="panel">
+      <div class="panel__header">
+        <div>
+          <p class="eyebrow">Step 1</p>
+          <h2>Tell us about yourself</h2>
+        </div>
+        <p class="helper">Fields marked with * are required</p>
+      </div>
+      <form id="application-form" class="form">
+        <div class="grid">
+          <label class="field">
+            <span>Full name *</span>
+            <input type="text" name="fullName" required placeholder="Alex Johnson" />
+          </label>
+          <label class="field">
+            <span>Email *</span>
+            <input type="email" name="email" required placeholder="alex@email.com" />
+          </label>
+          <label class="field">
+            <span>Phone *</span>
+            <input type="tel" name="phone" required placeholder="(555) 123-4567" />
+          </label>
+          <label class="field">
+            <span>Annual income *</span>
+            <div class="input-prefix">
+              <span>$</span>
+              <input type="number" name="income" required min="0" step="1000" placeholder="75000" />
+            </div>
+          </label>
+          <label class="field">
+            <span>Employment type *</span>
+            <select name="employment" required>
+              <option value="">Select</option>
+              <option>Full-time</option>
+              <option>Part-time</option>
+              <option>Self-employed</option>
+              <option>Student</option>
+              <option>Retired</option>
+            </select>
+          </label>
+          <label class="field">
+            <span>Estimated credit score *</span>
+            <select name="score" required>
+              <option value="">Select range</option>
+              <option>720-850 (Excellent)</option>
+              <option>680-719 (Good)</option>
+              <option>640-679 (Fair)</option>
+              <option>580-639 (Below average)</option>
+              <option>Under 580 (Poor)</option>
+            </select>
+          </label>
+        </div>
+
+        <label class="field">
+          <span>Preferred card *</span>
+          <div class="card-options">
+            <label class="option">
+              <input type="radio" name="cardType" value="Cash Back" required />
+              <div>
+                <p class="option__title">Cash Back</p>
+                <p class="option__desc">Up to 3% on groceries, 2% on gas.</p>
+              </div>
+            </label>
+            <label class="option">
+              <input type="radio" name="cardType" value="Travel Rewards" />
+              <div>
+                <p class="option__title">Travel Rewards</p>
+                <p class="option__desc">Bonus miles on flights and hotels.</p>
+              </div>
+            </label>
+            <label class="option">
+              <input type="radio" name="cardType" value="Starter" />
+              <div>
+                <p class="option__title">Starter</p>
+                <p class="option__desc">Lower limits for building credit history.</p>
+              </div>
+            </label>
+          </div>
+        </label>
+
+        <div class="field checkbox">
+          <label>
+            <input type="checkbox" name="consent" required />
+            I agree to a soft credit pull for eligibility.
+          </label>
+        </div>
+
+        <div class="actions">
+          <button type="submit" class="primary">Check eligibility</button>
+          <p class="helper">Won't impact your credit score.</p>
+        </div>
+      </form>
+    </section>
+
+    <section class="panel status" aria-live="polite">
+      <div class="panel__header">
+        <div>
+          <p class="eyebrow">Step 2</p>
+          <h2>Eligibility preview</h2>
+        </div>
+        <button id="reset" class="ghost" type="button">Start over</button>
+      </div>
+      <div id="status" class="status__card">
+        <p class="helper">Complete the form to see your personalized summary.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer__links">
+      <a href="#">Privacy</a>
+      <a href="#">Security</a>
+      <a href="#">Support</a>
+    </div>
+    <p>© 2024 Horizon Bank. All rights reserved.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
